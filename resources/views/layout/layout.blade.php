@@ -45,7 +45,7 @@
     <!--Data List de datos de los analistas-->
     <datalist id="dataListAnalista">
         @foreach ($analistas as $analista)
-            <option value="{{$analista->nombre_completo}}">{{$analista->nombre_completo}}</option>
+            <option value="{{$analista->nombre}}">{{$analista->nombre}}</option>
         @endforeach
     </datalist>
 

@@ -19,7 +19,7 @@ class RegistroDiarioController extends Controller
     {
         $dietas = Dieta::all();
         $turnos = Turno::all();
-        $analistas = Users::where('cargo','=','analista');
+        $analistas = Users::where('cargo', 'analista')->get();
         return view('calidad.reporteDiario', compact('dietas','turnos','analistas'));
     }
 
@@ -41,7 +41,15 @@ class RegistroDiarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        header("Content-Type: application/json");
+
+        $lote = json_decode(stripslashes(file_get_contents("php://input")));
+        $lote = json_decode(stripslashes($request->lote));
+
+        $baches = json_decode(stripslashes(file_get_contents("php://input")));
+        $baches = json_decode(stripslashes($request->baches));
+
+        return json_encode($lote);
     }
 
     /**

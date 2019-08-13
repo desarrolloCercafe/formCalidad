@@ -13,6 +13,6 @@
 
 Route::get('/', 'RegistroDiarioController@index');
 
-/*Route::get('/', function ($id) {
-    
-});*/
+Route::get('/insertarInformacion', 'RegistroDiarioController@store')->name('insertarInformacion');
+
+//Route::get('/filtrarTable', 'ConsultaController@FiltrarTabla')->name('filtrarTable');
