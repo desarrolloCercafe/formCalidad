@@ -1,4 +1,14 @@
 function ValidarFinalizar(){
+    document.getElementById('tituloModalErrores').innerHTML = "Confirmación de envío";
+    document.getElementById('contentModalErrores').innerHTML = "¿Deseas finalizar el registro de baches?";
+    document.getElementById('aceptarProceso').style.display  = "block";
+
+    document.getElementById('cancelarProcesos').innerHTML  = "Cancelar";
+    document.getElementById('cancelarProcesos').classList  = "btn btn-danger";
+    document.getElementById('activarModalError').click();
+}
+
+function finalizarRegistroBaches(){
     var consecutivo_bache = document.getElementById('consecutivo_bache').value;
     var horas_bache = document.getElementById('horas_bache').value;
     var minutos_bache = document.getElementById('minutos_bache').value;
@@ -82,6 +92,14 @@ function ValidarFinalizar(){
         GuardarDatosBache(objeto);
         EnviarInformacionAlServidor();
     }
+}
+
+function BorrarAceptarRegistroBaches(){
+
+    document.getElementById('aceptarProceso').style.display  = "none";
+
+    document.getElementById('cancelarProcesos').innerHTML  = "Ok";
+    document.getElementById('cancelarProcesos').classList = "btn btn-secondary";
 }
 
 function EnviarInformacionAlServidor(){

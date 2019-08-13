@@ -49,7 +49,11 @@ class RegistroDiarioController extends Controller
         $baches = json_decode(stripslashes(file_get_contents("php://input")));
         $baches = json_decode(stripslashes($request->baches));
 
+
+
         return json_encode($lote);
+
+
     }
 
     /**
